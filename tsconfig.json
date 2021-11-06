@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "target": "es2021",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "allowJs": false,
+    "checkJs": false,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.tsx", "src/**/*.ts"],
+  "exclude": ["node_modules"]
+}

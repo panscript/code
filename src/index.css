@@ -1,0 +1,115 @@
+* {
+	margin: 0;
+}
+
+html, body {
+	/* 1% margin all around */
+	width: 99%;
+	height: 98%;
+	margin-left: 0.5%;
+	margin-top: 0.5%;
+	background-color: #f9f9ff;
+}
+
+
+/* full page wrapper */
+
+#app {
+    height: 100%;
+    display: grid;
+	grid-template-columns: 5fr 10fr 9fr;
+	grid-template-rows: 3.5fr 1fr 19.5fr;
+	grid-template-areas:
+		"header header header"
+		"language_menu control_menu control_menu"
+		"explorer editor console";
+	column-gap: 0.75vw;
+	row-gap: 0.75vw;
+}
+
+
+/* header wrapper */
+
+#header {
+	grid-area: header;
+	display: grid;
+	justify-items: center;
+	align-items: center;
+}
+
+
+/* menus and menu items */
+
+.ant-btn {
+    border-color: #bfbfbf !important;
+}
+
+.ant-select-selector {
+    border-color: #bfbfbf !important;
+}
+
+#language_menu {
+	grid-area: language_menu;
+	align-self: end;
+}
+
+#control_menu {
+	grid-area: control_menu;
+	display: flex;
+	align-self: end;
+}
+
+
+/* file explorer */
+
+#explorer-container {
+	grid-area: explorer;
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	min-width: 250px;
+}
+
+#explorer-container > .ant-tree {
+	min-height: 100%;
+}
+
+
+/* code editor */
+
+#editor-container {
+	grid-area: editor;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+	min-width: 400px;
+}
+
+#editor-container > #editor {
+    flex: 1;
+}
+
+#editor-container > #editor > .react-codemirror2 {
+    height: 100%;
+	word-break: break-word;
+}
+
+#editor-container > #editor > .react-codemirror2 > .CodeMirror {
+    height: 100%;
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, Courier New, monospace, serif;
+}
+
+
+/* output console */
+
+#output-container {
+	grid-area: console;
+    height: 100%;
+    display: flex;
+	min-width: 300px;
+}
+
+#output-container > #output {
+    flex: 1;
+	overflow-x: hidden;
+}
